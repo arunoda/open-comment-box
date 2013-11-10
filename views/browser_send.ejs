@@ -1,0 +1,24 @@
+<html>
+<head>
+  <script type="text/javascript">
+    var user = <%- JSON.stringify(user) %>;
+    function sendUser() {
+      if(window.opener) {
+        var payload = {
+          action: 'OCB:authResult',
+          data: user
+        };
+
+        window.opener.postMessage(JSON.stringify(payload), '*');
+        window.close();
+      } else {
+        alert('you are not inside the popup window!');
+      }
+    }
+    sendUser();
+  </script>
+</head>
+<body>
+  <h3>Redirecting...</h3>
+</body>
+</html>

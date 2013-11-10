@@ -1,0 +1,156 @@
+<html>
+<head>
+  <title>Open Comment Box</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900' rel='stylesheet' type='text/css'>
+    <link href="/lib/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/public.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/lib/vendor/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+   <div class="container">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Open Comment Box</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://ocb.uservoice.com/knowledgebase">
+            <span class='glyphicon glyphicon-book'></span> Docs</a>
+          </li>
+          <li><a href="https://github.com/arunoda/open-comment-box/issues">
+            <span class="glyphicon glyphicon-warning-sign"></span> Issues</a>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-5 video-intro'>
+        <iframe src="http://fast.wistia.net/embed/iframe/3n3i0hyvyt" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="400" height="250"></iframe>
+      </div>
+      <div class='col-md-7 intro-section'>
+        <h1>Open Comment Box</h1>
+        <h2>Open Source Realtime Comments Platform</h2>
+        <h3>Easy way to power your website with comments</h3>
+        <h4>[ you own the data, and you have it ]</h4>
+        <div class='nko-vote'>
+          <iframe src="http://nodeknockout.com/iframe/meteorhacks" frameborder=0 scrolling=no allowtransparency=true width=115 height=25>
+          </iframe>
+          <div>
+            vote us on <a href='http://nodeknockout.com/teams/meteorhacks'>NodeKnockout</a> - click above badge
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Details -->
+  <div class='container'>
+    <div class='row details'>
+      <div class='col-md-5 comments-box'>
+        <h4>What you think about <b>Open Comment Box</b>?</h4>
+        <div class='powered-by'>(This comment box is powered by Open Comment Box)</div>
+        <iframe id="ocb_iframe" frameborder="0" scrolling="no" src="about:blank"></iframe>
+        <script id="ocb_script_loader" type="text/javascript">
+          (function(base_url, api_key){
+            document.getElementById('ocb_script_loader').dataset.base_url = base_url;
+            document.getElementById('ocb_script_loader').dataset.api_key = api_key;
+            document.addEventListener("DOMContentLoaded", function loadOCB (e) {
+              var ocb_script_tag = document.createElement('script');
+              ocb_script_tag.src = base_url + '/static/client.js';
+              document.head.appendChild(ocb_script_tag);
+            })
+          })('http://meteorhacks.2013.nodeknockout.com', 'BHfsCjGa6hP3htF4F');
+        </script>
+      </div>
+      <div class='col-md-7'>
+        <h4>Add comments to your web site</h4>
+        <textarea class='ocb-code'> <iframe id="ocb_iframe" frameborder="0" scrolling="no" src="about:blank"></iframe><script id="ocb_script_loader" type="text/javascript"> (function(base_url, api_key){document.getElementById('ocb_script_loader').dataset.base_url=base_url;document.getElementById('ocb_script_loader').dataset.api_key=api_key;document.addEventListener("DOMContentLoaded", function loadOCB (e){var ocb_script_tag=document.createElement('script');ocb_script_tag.src=base_url + '/static/client.js';document.head.appendChild(ocb_script_tag);})})('http://meteorhacks.2013.nodeknockout.com', 'BHfsCjGa6hP3htF4F');</script> </textarea>
+
+        <!-- Moderate Link -->
+        <div class='moderate-link'>
+          <a href='/admin' class='btn btn-danger'>Moderate Comments ( No Login Required )</a>
+        </div>
+
+        <!--  -->
+
+        <!-- Deploy Options -->
+        <h3>Deploy Open Comment Box (DIY)</h3>
+        <div class='row deploy-info'>
+          <div class='col-md-6 heroku-logo'>
+            <a href='http://ocb.uservoice.com/knowledgebase/articles/280156-tutorial-deploying-ocb-in-heroku'><img src="/images/heroku-logo.png" /></a>
+            <p>
+              <b>Open Comment Box</b> has been configure to deploy into Heroku very easily. You simply need to add to add a MongoDB addon and push your app into heroku. <a href='http://ocb.uservoice.com/knowledgebase/articles/280156-tutorial-deploying-ocb-in-heroku'>See more</a> on deploying into Heroku.
+            </p>
+          </div>
+          <div class='col-md-6 docker-logo'>
+            <a href='http://ocb.uservoice.com/knowledgebase/articles/280158-deploying-using-docker'><img src="/images/docker-logo.png" /></a>
+            <p>
+              <b>Open Comment Box</b> comes with a <a href='https://index.docker.io/u/arunoda/ocb/'>docker image</a> where you try out it or deploy in a production docker environment. <a href='http://ocb.uservoice.com/knowledgebase/articles/280158-deploying-using-docker'>See more</a> on deploying with docker.
+            </p>
+          </div>
+          <div class='col-md-6 docker-logo'>
+            <a href='http://ocb.uservoice.com/knowledgebase/articles/280177-deploying-on-nodejitsu'><img src="/images/nodejitsu-logo.png" /></a>
+            <p>
+              <b>Open Comment Box</b> is also supported to deploying on Nodejitsu. <a href='http://ocb.uservoice.com/knowledgebase/articles/280177-deploying-on-nodejitsu'>See more</a> on deploying into nodejitsu.
+            </p>
+          </div>
+          <div class='col-md-6 heroku-logo'>
+            <a href='http://ocb.uservoice.com/knowledgebase/articles/280162-deploying-on-modulus-io'><img src="/images/modulus-logo.jpg" /></a>
+            <p>
+              <b>Open Comment Box</b> is also supported to deploying on modulus.io. <a href='http://ocb.uservoice.com/knowledgebase/articles/280162-deploying-on-modulus-io'>See more</a> on deploying into modulus.io.
+            </p>
+          </div>
+        </div>
+
+        <!-- Integrations -->
+        <h3>Integrations</h3>
+        <div class='row deploy-info'>
+          <div class='col-md-6 wordpress-logo'>
+            <a href='http://ocb.uservoice.com/knowledgebase/articles/280211-integration-with-wordpress'><img src="/images/wordpress-logo.png" /></a>
+            <p>
+              With our WordPress plugin you can power your WordPress site with Open Comment Box very easily. <a href='http://ocb.uservoice.com/knowledgebase/articles/280211-integration-with-wordpress'>See more</a> on the integration.
+            </p>
+          </div>
+          <div class='col-md-6 ghost-logo'>
+            <a href='http://ocb.uservoice.com/knowledgebase/articles/280213-integration-ghost'><img src="/images/ghost-logo.png" /></a>
+            <p>
+              <a href='http://ocb.uservoice.com/knowledgebase/articles/280213-integration-ghost'>See this guide</a> for enabling Open Comment Box with <a href='https://ghost.org/'>ghost</a> blogging platform.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <b>Open Comment Box</b> produdly presented by <a href='http://nodeknockout.com/teams/meteorhacks'>MeteorHacks</a>
+  </footer>
+
+  <!-- GA START -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-45614018-1', 'nodeknockout.com');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- GA END -->
+</body>
+</html>

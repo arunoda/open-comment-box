@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Open Comment Box - Comments Moderation</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/lib/vendor/bootstrap/css/bootstrap.min.css"
+  rel="stylesheet">
+
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900' rel='stylesheet' type='text/css'>
+
+<!-- Custom styles for this template -->
+<link href="/css/admin.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <%- include navigation.ejs %>
+
+  <div class="container">
+    <div class="panel panel-default widget">
+      <div class="panel-heading">
+        
+        <div class="panel-title">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+             <% if(selectedDomain.name){ %> <%= selectedDomain.name %> <% }else { %> Show All <% }%> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <% domains.forEach(function(domain){ %>
+              <li class="<% if(domain._id==selectedDomain) {%>
+                selected
+                <% } %>
+
+                "><a href="#" id="domain-<%= domain._id %>" class="select-domain"> <%= domain.name %> </a></li>
+              <% }) %>
+              <li class="<% if(selectedDomain) { %>
+                selected
+                <% } %>
+                "> <a href="#" id="domain-all" class="select-domain">Show All</a></li>
+            </ul>
+          </div> 
+          <span class="glyphicon glyphicon-comment"></span>
+            Comment Moderation 
+        </div>
+      </div>
+
+      <div class="panel-body">
+        <ul class="list-group">
+
+          <% comments.forEach(function(comment){ %>
+            <li class="list-group-item">
+
+              <div class= "row">
+                <div class="col-md-1" style="">
+                      <% if (users[comment.userId]){ %>
+                        
+                         <img src="<%= users[comment.userId].avatar %>" class="img-circle img-responsive" alt="" style="float: left;margin-left: 15px;width:50px;height:50px;"/> 
+                      <% } else { %>
+                        <img src="/images/user.png" class="img-circle img-responsive" alt="" style="float: left;margin-left: 15px;width:50px;height:50px;"/>
+                      <% } %>
+                  
+                </div>
+                <div class="col-md-10">
+                    <span class="user-name" style="font-size:16px;">
+                      <% if (users[comment.userId]){ %>
+                        <%=  users[comment.userId].name %>
+                      <% } else { %>
+                        Annonymous
+                      <% } %>
+                   </span> 
+                   | <span> <%= comment.createdAt %> </span> <a href="<%= comment.url %>" target="_blank"><span class="glyphicon glyphicon-new-window"></span> </a>
+                    <div class="truncate"> <%- comment.message %> </div>
+
+                    <% if (comment.approved) { %>
+                        <a type="button" class="btn btn-default btn-xs action-btn <% if ((comment.domain == 'meteorhacks.2013.nodeknockout.com')) { %> nko-comment <% } %>" title="Reject" id="reject-<%=comment._id %>">
+                       <span class="glyphicon glyphicon-ban-circle"></span>
+                          </a>
+
+                    <% } else { %>
+                        <a type="button" class="btn btn-success btn-xs action-btn <% if ((comment.domain == 'meteorhacks.2013.nodeknockout.com')) { %> nko-comment <% } %>" title="Approve" id="approve-<%=comment._id %>">
+                          <span class="glyphicon glyphicon-ok"></span>
+                          </a>
+                    <% }%>
+
+                    <a class="btn btn-danger btn-xs action-btn <% if ((comment.domain == 'meteorhacks.2013.nodeknockout.com')) { %> nko-comment <% } %>" id="delete-<%=comment._id %>" title="Delete"><span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </div>
+              
+              </div>
+            </li>
+          <% }) %>
+        </ul>
+        <ul class="pager">
+          <% if(prevPage) { %><li><a href="?page=<%= prevPage %>">Previous</a></li> <% } %>
+          <li><a href="?page=<%= nextPage %>">Next</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="smart-paginator">
+    </div>
+  </div>
+  <!-- /.container -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/lib/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/lib/vendor/bootbox.js"></script>
+  <script src="/lib/vendor/jquery.bootstrap-growl.min.js"></script>
+   <script src="/lib/toast.js"></script>
+  
+  <script src="/js/admin.js"></script>
+
+    <!-- GA START -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-45614018-1', 'nodeknockout.com');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- GA END -->
+
+</body>
+</html>

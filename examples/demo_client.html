@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Test Comments</title>
+  <style>
+    * { font-weight: normal; }
+    #content { font-family: Helvetica; width: 800px; margin: 100px auto; }
+  </style>
+</head>
+<body>
+  <!-- Example Content -->
+  <div id="content">
+    <h1>Example Header</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt, quos, quisquam, non excepturi beatae animi quia cum quod molestiae maxime sit molestias. Non quos ad corrupti id officiis soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, blanditiis, pariatur, voluptate nesciunt cumque saepe eveniet eum officiis reiciendis quibusdam iure ad beatae modi omnis in a nam esse cupiditate.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt, quos, quisquam, non excepturi beatae animi quia cum quod molestiae maxime sit molestias. Non quos ad corrupti id officiis soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, blanditiis, pariatur, voluptate nesciunt cumque saepe eveniet eum officiis reiciendis quibusdam iure ad beatae modi omnis in a nam esse cupiditate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, dignissimos molestias veritatis pariatur in culpa assumenda aperiam laboriosam delectus fugit. Dolorum, quisquam, a nam veniam aut labore est delectus reprehenderit!</p>
+    <h2>Example Sub Header</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, incidunt, quos, quisquam, non excepturi beatae animi quia cum quod molestiae maxime sit molestias. Non quos ad corrupti id officiis soluta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, blanditiis, pariatur, voluptate nesciunt cumque saepe eveniet eum officiis reiciendis quibusdam iure ad beatae modi omnis in a nam esse cupiditate.</p>
+
+    <iframe id="ocb_iframe" frameborder="0" scrolling="no" src="about:blank"></iframe>
+    <script id="ocb_script_loader" type="text/javascript">
+      (function(base_url, api_key){
+        document.getElementById('ocb_script_loader').dataset.base_url = base_url;
+        document.getElementById('ocb_script_loader').dataset.api_key = api_key;
+        document.addEventListener("DOMContentLoaded", function loadOCB (e) {
+          var ocb_script_tag = document.createElement('script');
+          ocb_script_tag.src = base_url + '/static/client.js';
+          document.head.appendChild(ocb_script_tag);
+        })
+      })('http://meteorhacks.2013.nodeknockout.com', 'BHfsCjGa6hP3htF4F');
+    </script>
+
+  </div>
+  <!--/Example Content -->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Open Comment Box - Admininstrator Login</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/lib/vendor/bootstrap/css/bootstrap.min.css"
+  rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900' rel='stylesheet' type='text/css'>
+
+<!-- Custom styles for this template -->
+<link href="/css/admin.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Sign in to OCB Admin</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="/images/user.png"
+                    alt="">
+
+                <form class="form-signin" method="get" id="form-signin" action="/admin/login/submit">
+                  <input type="text" id="username" name="username" class="form-control" placeholder="User Name " required autofocus>
+                  <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- /.container -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/lib/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/lib/vendor/jquery.bootstrap-growl.min.js"></script>
+   <script src="/lib/toast.js"></script>
+
+     <!-- GA START -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-45614018-1', 'nodeknockout.com');
+    ga('send', 'pageview');
+
+  </script>
+
+  <!-- GA END -->
+
+</body>
+</html>

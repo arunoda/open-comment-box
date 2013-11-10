@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Open Comment Box</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
+  <script src="scripts/moment.min.js"></script>
+  <script src="scripts/modules/Channel.js"></script>
+  <script src="scripts/modules/Comment.js"></script>
+  <script src="scripts/modules/Interface.js"></script>
+  <script src="scripts/modules/User.js"></script>
+</head>
+<body>
+  <div id="loadingAnimation" class="visible">
+    Loading comments<br><img src="styles/loader.gif" />
+  </div>
+  <div id="content">
+    <div id="messageWrap" class="">
+      <small id="replyTo" class=""></small>
+      <img id="avatar" src="">
+      <button id="logoutButton" onclick="User.logout()">Log Out</button>
+      <textarea id="message"></textarea>
+      <button id="messageSubmit">Add Comment</button>
+      <div id="loginWrapper">
+        Login with
+        <button onclick="User.requestLogin('Google')">Google</button>
+        , <button onclick="User.requestLogin('Facebook')">Facebook</button>
+        or <button onclick="User.requestLogin('Twitter')">Twitter</button>
+        to comment
+      </div>
+    </div>
+    <button id="unreadComments"></button>
+    <div id="commentsWrap"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+@comment_fontSize: 13px;
+@comment_padding: round(@comment_fontSize * 0.75);
+@comment_textColor: rgba(75,75,75,1);
+@comment_linkColor: rgba(150,150,150,1);
+@comment_linkColorHover: rgba(100,100,100,1);
+
+@keyframes blinkblink {
+  0%   {opacity:0;}
+  33%  {opacity:1;}
+  66%  {opacity:0;}
+ 100%  {opacity:1;}
+}
+
+@-webkit-keyframes blinkblink {
+  0%   {opacity:0;}
+  33%  {opacity:1;}
+  66%  {opacity:0;}
+ 100%  {opacity:1;}
+}
+
+.comment {
+
+  position: relative;
+  padding: @comment_padding;
+  padding-left: @comment_padding + 37px;
+  min-height: 60px;
+  font-size: @comment_fontSize;
+  color: @comment_textColor;
+  transition: all 0.5s;
+  border: dashed 1px rgba(200,50,50,0);
+
+  a.avatar {
+    position: absolute;
+    padding: 0;
+    display: block;
+    left: 9px;
+    top: 14px;
+    img {
+      width: 30px;
+      border-radius: 15px;
+    }
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: round(@comment_fontSize * 0.5);
+  }
+
+  p.links {
+    margin: 0;
+    font-size: round(@comment_fontSize * 0.8);
+    button {
+      color: @comment_linkColor;
+      padding: 4px 6px;
+      border: none;
+      background: none;
+      transition: all 0.5s;
+      &:hover {
+        color: @comment_linkColorHover;
+      }
+    }
+  }
+
+  a {
+    display: inline-block;
+    padding: 2px 3px;
+    color: @comment_linkColor;
+    text-decoration: none;
+    transition: all 0.5s;
+    &:hover {
+      color: @comment_linkColorHover;
+    }
+  }
+
+  h3.username {
+    font-weight: bold;
+    margin: 0 0 3px 0;
+    font-size: 1.1em;
+  }
+
+  .comment {
+    margin-left: -9px;
+  }
+
+  &.new-comment, .comment.new-comment {
+    animation: blinkblink 1.5s;
+    -webkit-animation: blinkblink 1.5s;
+  }
+
+  &:hover {
+    background: rgba(100,100,100,0.05);
+  }
+
+}
+
+.comment .comment .comment .comment .links .replyTo {
+  display: none;
+}

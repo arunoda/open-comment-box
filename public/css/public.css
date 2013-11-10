@@ -1,0 +1,105 @@
+body, div, p, a, h1, h2, h3, h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+img {
+  width: 90% !important;
+  padding: 5%;
+  height:auto;  
+  display:block;
+}
+
+.navbar-brand {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+}
+
+.intro-section h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+  font-size: 70px;
+  color: #525252;
+}
+
+.intro-section h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin: 0px;
+  color: #444;
+}
+
+.intro-section h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  margin-top: 20px;
+  border-top: 1px dashed #ccc;
+  padding-top: 15px;
+  color: #444;
+}
+
+.intro-section h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0px;
+  font-weight: 700;
+  color: #c73b18;
+}
+
+.nko-vote {
+  margin-top: 25px;
+}
+
+.comments-box {
+  text-align: center;
+}
+
+.comments-box h4 {
+  margin-bottom: 0px;
+}
+
+.comments-box .powered-by {
+  font-size: 13px;
+}
+
+.video-intro {
+  text-align: center;
+}
+
+.video-intro iframe{
+  margin: auto;
+}
+
+.ocb-code {
+  -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  width: 100%;
+  height: 102px;
+  font-family: 'Monaco', '';
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 13px;
+  background-color: #eee;
+  color: #777;
+}
+
+.moderate-link {
+  margin-top: 20px;
+}
+
+.details {
+  margin-top: 30px;
+}
+
+.details h3{
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+footer {
+  border-top: 1px solid #ddd;
+  padding: 20px;
+  margin: 50px;
+  text-align: center;
+}

@@ -1,0 +1,34 @@
+<html>
+<head>
+  <script type="text/javascript" src="jsonp.js"></script>
+  <script type="text/javascript">
+    function logger() {
+      console.log(arguments);  
+    }
+
+    function getInitData() {
+      var url = 'http://localhost:8000/comments/init?callback=logger&apiToken=223232';
+      url += "&url=" + encodeURIComponent(location.href);
+      jsonp(url);
+    }
+
+    function createComment(message) {
+      var url = 'http://localhost:8000/comments/create?callback=logger' + 
+        "&apiToken=11111" +
+        "&userId=527e785fb3d9b21ce5543f9e" +
+        "&userToken=888888" + 
+        "&url=" + encodeURIComponent(location.href) +
+        "&message=" + message;
+      jsonp(url)
+    }
+
+    function deleteComment(id) {
+      var url = 'http://localhost:8000/comments/delete?callback=logger' + 
+        "&apiToken=11111" +
+        "&url=" + encodeURIComponent(location.href) +
+        "&id=" + id;
+      jsonp(url)
+    }
+  </script>
+</head>
+</html>

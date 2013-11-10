@@ -1,0 +1,19 @@
+{
+	
+	"passport":{
+		"facebook":{
+			"clientID": "xxxx",
+      "clientSecret": "xxx"
+		},	
+		"google":{
+			"clientID": "xxx",
+      "clientSecret": "xxx"
+		},	
+		"twitter":{
+			"consumerKey": "xxxx",
+      "consumerSecret": "xxxx"
+		}
+	},
+
+	"url": "http://localhost:8000"
+}

@@ -1,0 +1,32 @@
+<html>
+
+<head>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>
+    <script>
+        var sockjs_url = 'http://localhost:8000/rt';
+        var sockjs = new SockJS(sockjs_url);
+
+        var print = function(m, p) {
+            console.log(m, p);
+        };
+
+        sockjs.onmessage = function(e) {print('[.] message', JSON.parse(e.data));};
+        sockjs.onclose   = function()  {print('[*] close');};
+        sockjs.onopen    = function()  {
+            print('[*] open', sockjs.protocol);
+            var initData = {command: 'init', apiToken:'asdasd' , url:'http://localhost:8080/jsonp.html'   };
+
+            print('[ ] sending');
+            sockjs.send(JSON.stringify( initData ));
+        };
+
+    </script>
+</head>
+<body>
+	
+	
+</body>
+
+</html>
+
