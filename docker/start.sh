@@ -9,6 +9,7 @@ else
   echo "Using local mongodb server(not recommended)"
   
   mongod &
+  sleep 5
   cd app
   NODE_ENV=production node server.js
 fi

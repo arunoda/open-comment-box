@@ -3,10 +3,11 @@
 FROM ubuntu
 MAINTAINER Arunoda Susiripala, arunoda.susiripala@gmail.com
 
+RUN echo deb http://archive.ubuntu.com/ubuntu precise universe >> /etc/apt/sources.list
 RUN apt-get update -y
 
 #install dependencies
-RUN apt-get -y install build-essential libssl-dev wget 
+RUN apt-get -y install build-essential libssl-dev wget
 
 #configuration for node
 ENV NODE_VERSION 0.10.21
@@ -32,12 +33,12 @@ RUN apt-get install mongodb-10gen=2.4.5
 RUN mkdir -p /opt/ocb
 WORKDIR /opt/ocb
 
-RUN echo "new version"
+RUN npm install -g node-gyp
 
 #downloading app
-RUN wget --no-check-certificate https://github.com/arunoda/open-comment-box/archive/master.tar.gz
-RUN tar xvzf master.tar.gz
-RUN mv open-comment-box-master app
+RUN wget --no-check-certificate https://github.com/arunoda/open-comment-box/archive/v0.2.0.tar.gz
+RUN tar xvzf v0.2.0.tar.gz
+RUN mv open-comment-box-0.2.0 app
 RUN cd app && npm install
 
 #db setup
@@ -46,6 +47,3 @@ RUN mkdir -p /data/db
 #copy running scripts
 ADD start.sh /opt/ocb/start.sh
 ENTRYPOINT ["bash", "start.sh"]
-
-
-
